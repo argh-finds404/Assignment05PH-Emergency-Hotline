@@ -86,10 +86,17 @@ btn.addEventListener('click',(event)=>{
 
 
 
+// call history section
+
 function handleToggle(id){
         const forms=document.getElementsByClassName('form')
         document.getElementById(id).style.display="block";
-        
+
+    const card = document.getElementById(id);
+    card.style.display = "flex";
+    const timeDiv = card.querySelector(".timeNow"); 
+    const now = new Date();
+    timeDiv.innerText = now.toLocaleTimeString(); 
 }
 
 // call history toggle
