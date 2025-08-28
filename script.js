@@ -15,8 +15,13 @@ for (let i = 0; i < heartIcons.length; i++) {
 
 
 //? Call Button
+ const callHistoryContainer = document.querySelector("#call-history-container"); 
+
+ const clearHistoryBtn = document.querySelector("#clear-history-btn"); 
+
  const coinEl = document.getElementById("coins-count");
- document.querySelectorAll(".call-btn").forEach((btn) => {
+
+ document.querySelectorAll(".call-btn").forEach((btn,index) => {
     btn.addEventListener("click", (event) => {
       event.preventDefault();
 
@@ -39,6 +44,23 @@ for (let i = 0; i < heartIcons.length; i++) {
       // deduct 20 coins and update DOM
       coins -= 20;
       coinEl.textContent = coins;
+
+    // const historyContainer = document.getElementById('call-history-container');
+    // const cards = historyContainer.children;
+
+    // for (let i = 0; i < cards.length; i++) {
+    //   const cardNameEl = cards[i].querySelector('p.font-semibold');
+    //   if (!cardNameEl) continue;
+
+    //   const cardName = cardNameEl.innerText.trim();
+    //   if (cardName === serviceName) {
+    //     cards[i].style.display = 'flex'; // show the card
+    //     const timeDiv = cards[i].querySelector('div:last-child');
+    //     const now = new Date();
+    //     timeDiv.innerText = now.toLocaleTimeString(); // show current time
+    //     break;
+    //   }
+    // }
     });
   });
 
@@ -64,3 +86,53 @@ btn.addEventListener('click',(event)=>{
 
 
 
+function handleToggle(id){
+        const forms=document.getElementsByClassName('form')
+        document.getElementById(id).style.display="block";
+        
+}
+
+// call history toggle
+document.getElementById('national-emergency').addEventListener('click',()=>{
+    handleToggle('emer');
+});
+
+
+document.getElementById('fireCall').addEventListener('click',()=>{
+    handleToggle('fire');
+});
+
+
+document.getElementById('police').addEventListener('click',()=>{
+    handleToggle('pol');
+});
+
+
+document.getElementById('Ambulance').addEventListener('click',()=>{
+    handleToggle('ambul');
+});
+
+
+document.getElementById('womenChild').addEventListener('click',()=>{
+    handleToggle('wochild');
+});
+
+
+document.getElementById('corruption').addEventListener('click',()=>{
+    handleToggle('corr');
+});
+
+
+document.getElementById('Electricity').addEventListener('click',()=>{
+    handleToggle('elec');
+});
+
+
+document.getElementById('Brac').addEventListener('click',()=>{
+    handleToggle('brac');
+});
+
+
+document.getElementById('Railway').addEventListener('click',()=>{
+    handleToggle('rail');
+});
