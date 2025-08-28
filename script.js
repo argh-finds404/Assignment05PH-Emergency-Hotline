@@ -21,11 +21,10 @@ for (let i = 0; i < heartIcons.length; i++) {
 
  const coinEl = document.getElementById("coins-count");
 
- document.querySelectorAll(".call-btn").forEach((btn,index) => {
+ document.querySelectorAll(".call-btn").forEach((btn) => {
     btn.addEventListener("click", (event) => {
       event.preventDefault();
 
-      // get current coins from DOM
       let coins = parseInt(coinEl.innerText);
 
       if (coins < 20) {
@@ -41,26 +40,8 @@ for (let i = 0; i < heartIcons.length; i++) {
       // show alert
       alert(`📞 Calling ${serviceName} Service at ${serviceNumber}...`);
 
-      // deduct 20 coins and update DOM
       coins -= 20;
       coinEl.textContent = coins;
-
-    // const historyContainer = document.getElementById('call-history-container');
-    // const cards = historyContainer.children;
-
-    // for (let i = 0; i < cards.length; i++) {
-    //   const cardNameEl = cards[i].querySelector('p.font-semibold');
-    //   if (!cardNameEl) continue;
-
-    //   const cardName = cardNameEl.innerText.trim();
-    //   if (cardName === serviceName) {
-    //     cards[i].style.display = 'flex'; // show the card
-    //     const timeDiv = cards[i].querySelector('div:last-child');
-    //     const now = new Date();
-    //     timeDiv.innerText = now.toLocaleTimeString(); // show current time
-    //     break;
-    //   }
-    // }
     });
   });
 
@@ -98,6 +79,8 @@ function handleToggle(id){
     const now = new Date();
     timeDiv.innerText = now.toLocaleTimeString(); 
 }
+
+
 
 // call history toggle
 document.getElementById('national-emergency').addEventListener('click',()=>{
@@ -142,4 +125,19 @@ document.getElementById('Brac').addEventListener('click',()=>{
 
 document.getElementById('Railway').addEventListener('click',()=>{
     handleToggle('rail');
+});
+
+
+
+
+
+
+// clear history btn
+
+document.getElementById('clear-history-btn').addEventListener('click', (e) => {
+    const cards = document.querySelectorAll("#call-history-container .form");
+    cards.forEach(card => {
+        card.style.display = "none"; 
+        card.querySelector(".timeNow").innerText = ""; 
+    });
 });
