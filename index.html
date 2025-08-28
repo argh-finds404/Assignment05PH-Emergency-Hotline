@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joruri Seba</title>
+    <!-- Daisy UI and tailwind CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="">
+    <!--* navbar -->
+    <nav class="max-h-[100px]">
+      <div class="flex justify-between items-center p-5">
+        <div class="flex space-x-4">
+          <img class="h-[60px] w-[60px]" src="assets/logo.png" />
+          <p class="text-[#006747] font-bold text-2xl flex items-center">
+            Emergency <br />
+            Service
+          </p>
+        </div>
+
+        <div class="flex space-x-4">
+          <button
+            class="btn btn px-7 py-6 rounded-full font-bold text-xl bg-[#41ff6b1a] border-0 items-center"
+          >
+            <span id="heart-count" class="mr-2">0</span
+            ><img class="h-[30px] w-[30px]" src="assets/heart.png" />
+          </button>
+          <button
+            class="btn px-5 py-6 rounded-full font-bold text-xl bg-[#41ff6b1a] border-0 items-center"
+          >
+            <span id="coins-count" class="mr-2">100</span
+            ><img class="h-[30px] w-[30px]" src="assets/coin.png" />
+          </button>
+          <button
+            class="btn px-8 py-6 bg-[#00A63E] text-white rounded-full text-xl border-0 items-center"
+          >
+            <span id="copyCount">0</span>Copy
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!--* banner -->
+    <div
+      class="flex flex-col min- h-[245px] w-full justify-center items-center bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223]"
+    >
+      <img src="assets/logo-dark.png" class="h-[93px] w-[93px]" />
+      <p class="text-white font-bold text-4xl">Emergency Service Directory</p>
+      <br />
+      <p class="text-white font-medium text-xl">
+        Government Emergency Services at Your Fingertip – A Project by
+        Government of the People’s Republic of Bangladesh
+      </p>
+    </div>
+
+    <!--* cards and call history -->
+    <div class="bg-[#F5FFF6]  flex justify-between min-h-[145vh] " >
+      <!-- all container -->
+      <!--*all cards container -->
+      <div
+        class="max-w-[1370px] pt-12 ml-9 p-3 grid grid-cols-3 gap-x-8 gap-y-2 justify-items-center "
+      > 
+        <!--! National emergency helpline -->
+        <div class="h-[387px] w-[420px] bg-white shadow-md rounded-xl p-5 pl-7 card">
+          <div class="flex justify-between items-center space-x-2">
+            <div
+              class="bg-[#FFE3E2] rounded-2xl h-[60px] w-[60px] flex items-center justify-center"
+            >
+              <img class="h-[35px] w-[35px]" src="assets/emergency.png" />
+            </div>
+            <!-- Wrap heart in a div and move slightly left -->
+            <div  class="translate-x-[-20px]">
+              <i 
+                class="fa-regular fa-heart h-[65px] w-[50px] mt-10 text-gray-500 text-2xl self-center heart "
+              ></i>
+            </div>
+          </div>
+
+          <div class="mt-0 mb-4">
+            <p class="text-[#111111] font-bold text-2xl">
+              National Emergency Number
+            </p>
+            <p id="" class="text-[#5c5c5c] font-normal text-lg srvc-name">National Emergency</p>
+          </div>
+
+          <div class="">
+            <p class="text-[#111111] font-bold text-3xl pl-1 srvc-num">999</p>
+            <button
+              class="btn btn-sm text-[#5c5c5c] rounded-full px-4 py-1.5 bg-[#f2f2f2] border-0 text-lg font-normal"
+            >
+              All
+            </button>
+          </div>
+
+          <div class="flex gap-2 mt-5">
+            <button
+              class="btn btn-soft h-[40px] w-[165px] flex items-center justify-center rounded-lg bg-white text-[#5c5c5c] font-normal copy-btn"
+            >
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+
+            <button  
+              class="btn btn-soft h-[40px] w-[165px] bg-[#00a63e] text-white flex items-center justify-center gap-2 rounded-lg font-normal call-btn"
+            >
+              <!-- Hollow phone SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.2 1.53.63 3.02 1.26 4.41a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.39.63 2.88 1.06 4.41 1.26a2 2 0 0 1 1.72 2z"
+                />
+              </svg>
+              Call
+            </button>
+          </div>
+        </div>
+
+        <!--! Police Helpline  -->
+        <div class="h-[387px] w-[420px] bg-white shadow-md rounded-xl p-5 pl-7 card">
+          <div class="flex justify-between items-center space-x-2">
+            <div
+              class="bg-[#DFEFFF] rounded-2xl h-[60px] w-[60px] flex items-center justify-center"
+            >
+              <img class="h-[35px] w-[35px]" src="assets/police.png" />
+            </div>
+            <!-- Wrap heart in a div and move slightly left -->
+            <div class="translate-x-[-20px]">
+              <i 
+                class="fa-regular fa-heart h-[65px] w-[50px] mt-10 text-gray-500 text-2xl self-center heart"
+              ></i>
+            </div>
+          </div>
+
+          <div class="mt-0 mb-4">
+            <p class="text-[#111111] font-bold text-2xl">
+              Police Helpline Number
+            </p>
+            <p class="text-[#5c5c5c] font-normal text-lg srvc-name">Police</p>
+          </div>
+
+          <div class="">
+            <p class="text-[#111111] font-bold text-3xl pl-1 srvc-num">999</p>
+            <button
+              class="btn btn-sm text-[#5c5c5c] rounded-full px-4 py-1.5 bg-[#f2f2f2] border-0 text-lg font-normal"
+            >
+              Police
+            </button>
+          </div>
+
+          <div class="flex gap-2 mt-5">
+            <button
+              class="btn btn-soft h-[40px] w-[165px] flex items-center justify-center rounded-lg bg-white text-[#5c5c5c] font-normal copy-btn"
+            >
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+
+            <button
+              class="btn btn-soft h-[40px] w-[165px] bg-[#00a63e] text-white flex items-center justify-center gap-2 rounded-lg font-normal call-btn"
+            >
+              <!-- Hollow phone SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.2 1.53.63 3.02 1.26 4.41a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.39.63 2.88 1.06 4.41 1.26a2 2 0 0 1 1.72 2z"
+                />
+              </svg>
+              Call
+            </button>
+          </div>
+        </div>
+        <!-- !Fire Service -->
+        <div class="h-[387px] w-[420px] bg-white shadow-md rounded-xl p-5 pl-7 card">
+          <div class="flex justify-between items-center space-x-2">
+            <div
+              class="bg-[#FFE3E2] rounded-2xl h-[60px] w-[60px] flex items-center justify-center"
+            >
+              <img class="h-[35px] w-[35px]" src="assets/fire-service.png" />
+            </div>
+            <!-- Wrap heart in a div and move slightly left -->
+            <div class="translate-x-[-20px]">
+              <i
+                class="fa-regular fa-heart h-[65px] w-[50px] mt-10 text-gray-500 text-2xl self-center heart"
+              ></i>
+            </div>
+          </div>
+
+          <div class="mt-0 mb-4">
+            <p class="text-[#111111] font-bold text-2xl">Fire Service Number</p>
+            <p class="text-[#5c5c5c] font-normal text-lg srvc-name">Fire Service</p>
+          </div>
+
+          <div class="">
+            <p class="text-[#111111] font-bold text-3xl pl-1 srvc-num">999</p>
+            <button
+              class="btn btn-sm text-[#5c5c5c] rounded-full px-4 py-1.5 bg-[#f2f2f2] border-0 text-lg font-normal"
+            >
+              Fire
+            </button>
+          </div>
+
+          <div class="flex gap-2 mt-5">
+            <button
+              class="btn btn-soft h-[40px] w-[165px] flex items-center justify-center rounded-lg bg-white text-[#5c5c5c] font-normal copy-btn"
+            >
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+
+            <button
+              class="btn btn-soft h-[40px] w-[165px] bg-[#00a63e] text-white flex items-center justify-center gap-2 rounded-lg font-normal call-btn"
+            >
+              <!-- Hollow phone SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.2 1.53.63 3.02 1.26 4.41a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.39.63 2.88 1.06 4.41 1.26a2 2 0 0 1 1.72 2z"
+                />
+              </svg>
+              Call
+            </button>
+          </div>
+        </div>
+        <!-- !Ambulance Service -->
+        <div class="h-[387px] w-[420px] bg-white shadow-md rounded-xl p-5 pl-7 card">
+          <div class="flex justify-between items-center space-x-2">
+            <div
+              class="bg-[#FFE3E2] rounded-2xl h-[60px] w-[60px] flex items-center justify-center"
+            >
+              <img class="h-[35px] w-[35px]" src="assets/ambulance.png" />
+            </div>
+            <!-- Wrap heart in a div and move slightly left -->
+            <div class="translate-x-[-20px]">
+              <i
+                class="fa-regular fa-heart h-[65px] w-[50px] mt-10 text-gray-500 text-2xl self-center heart"
+              ></i>
+            </div>
+          </div>
+
+          <div class="mt-0 mb-4">
+            <p class="text-[#111111] font-bold text-2xl">Ambulance Service</p>
+            <p class="text-[#5c5c5c] font-normal text-lg srvc-name">Ambulance</p>
+          </div>
+
+          <div class="">
+            <p class="text-[#111111] font-bold text-3xl pl-1 srvc-num">1994-999999</p>
+            <button
+              class="btn btn-sm text-[#5c5c5c] rounded-full px-4 py-1.5 bg-[#f2f2f2] border-0 text-lg font-normal"
+            >
+              Health
+            </button>
+          </div>
+
+          <div class="flex gap-2 mt-5">
+            <button
+              class="btn btn-soft h-[40px] w-[165px] flex items-center justify-center rounded-lg bg-white text-[#5c5c5c] font-normal copy-btn"
+            >
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+
+            <button
+              class="btn btn-soft h-[40px] w-[165px] bg-[#00a63e] text-white flex items-center justify-center gap-2 rounded-lg font-normal call-btn"
+            >
+              <!-- Hollow phone SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.2 1.53.63 3.02 1.26 4.41a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.39.63 2.88 1.06 4.41 1.26a2 2 0 0 1 1.72 2z"
+                />
+              </svg>
+              Call
+            </button>
+          </div>
+        </div>
+        <!-- !Women and child Helpline -->
+        <div class="h-[387px] w-[420px] bg-white shadow-md rounded-xl p-5 pl-7 card">
+          <div class="flex justify-between items-center space-x-2">
+            <div
+              class="bg-[#FFE3E2] rounded-2xl h-[60px] w-[60px] flex items-center justify-center"
+            >
+              <img class="h-[35px] w-[35px]" src="assets/emergency.png" />
+            </div>
+            <!-- Wrap heart in a div and move slightly left -->
+            <div class="translate-x-[-20px]">
+              <i
+                class="fa-regular fa-heart h-[65px] w-[50px] mt-10 text-gray-500 text-2xl self-center heart"
+              ></i>
+            </div>
+          </div>
+
+          <div class="mt-0 mb-4">
+            <p class="text-[#111111] font-bold text-2xl">
+              Women & Child Helpline
+            </p>
+            <p class="text-[#5c5c5c] font-normal text-lg srvc-name">
+              Women & Child Helpline
+            </p>
+          </div>
+
+          <div class="">
+            <p class="text-[#111111] font-bold text-3xl pl-1 srvc-num">109</p>
+            <button
+              class="btn btn-sm text-[#5c5c5c] rounded-full px-4 py-1.5 bg-[#f2f2f2] border-0 text-lg font-normal"
+            >
+              Help
+            </button>
+          </div>
+
+          <div class="flex gap-2 mt-5">
+            <button
+              class="btn btn-soft h-[40px] w-[165px] flex items-center justify-center rounded-lg bg-white text-[#5c5c5c] font-normal copy-btn"
+            >
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+
+            <button
+              class="btn btn-soft h-[40px] w-[165px] bg-[#00a63e] text-white flex items-center justify-center gap-2 rounded-lg font-normal call-btn"
+            >
+              <!-- Hollow phone SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.2 1.53.63 3.02 1.26 4.41a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.39.63 2.88 1.06 4.41 1.26a2 2 0 0 1 1.72 2z"
+                />
+              </svg>
+              Call
+            </button>
+          </div>
+        </div>
+        <!-- !Anti-corruption Helpline -->
+        <div class="h-[387px] w-[420px] bg-white shadow-md rounded-xl p-5 pl-7 card">
+          <div class="flex justify-between items-center space-x-2">
+            <div
+              class="bg-[#FFE3E2] rounded-2xl h-[60px] w-[60px] flex items-center justify-center"
+            >
+              <img class="h-[35px] w-[35px]" src="assets/emergency.png" />
+            </div>
+            <!-- Wrap heart in a div and move slightly left -->
+            <div class="translate-x-[-20px]">
+              <i
+                class="fa-regular fa-heart h-[65px] w-[50px] mt-10 text-gray-500 text-2xl self-center heart"
+              ></i>
+            </div>
+          </div>
+
+          <div class="mt-0 mb-4">
+            <p class="text-[#111111] font-bold text-2xl">
+              Anti-Corruption Helpline
+            </p>
+            <p class="text-[#5c5c5c] font-normal text-lg srvc-name">Anti-Corruption</p>
+          </div>
+
+          <div class="">
+            <p class="text-[#111111] font-bold text-3xl pl-1 srvc-num">106</p>
+            <button
+              class="btn btn-sm text-[#5c5c5c] rounded-full px-4 py-1.5 bg-[#f2f2f2] border-0 text-lg font-normal"
+            >
+              Govt.
+            </button>
+          </div>
+
+          <div class="flex gap-2 mt-5">
+            <button
+              class="btn btn-soft h-[40px] w-[165px] flex items-center justify-center rounded-lg bg-white text-[#5c5c5c] font-normal copy-btn"
+            >
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+
+            <button
+              class="btn btn-soft h-[40px] w-[165px] bg-[#00a63e] text-white flex items-center justify-center gap-2 rounded-lg font-normal call-btn"
+            >
+              <!-- Hollow phone SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.2 1.53.63 3.02 1.26 4.41a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.39.63 2.88 1.06 4.41 1.26a2 2 0 0 1 1.72 2z"
+                />
+              </svg>
+              Call
+            </button>
+          </div>
+        </div>
+        <!-- !Electricity Helpline -->
+        <div class="h-[387px] w-[420px] bg-white shadow-md rounded-xl p-5 pl-7 card">
+          <div class="flex justify-between items-center space-x-2">
+            <div
+              class="bg-[#FFE3E2] rounded-2xl h-[60px] w-[60px] flex items-center justify-center"
+            >
+              <img class="h-[35px] w-[35px]" src="assets/emergency.png" />
+            </div>
+            <!-- Wrap heart in a div and move slightly left -->
+            <div class="translate-x-[-20px]">
+              <i
+                class="fa-regular fa-heart h-[65px] w-[50px] mt-10 text-gray-500 text-2xl self-center heart"
+              ></i>
+            </div>
+          </div>
+
+          <div class="mt-0 mb-4">
+            <p class="text-[#111111] font-bold text-2xl">
+              Electricity Helpline
+            </p>
+            <p class="text-[#5c5c5c] font-normal text-lg srvc-name">Electricity Outage</p>
+          </div>
+
+          <div class="">
+            <p class="text-[#111111] font-bold text-3xl pl-1 srvc-num">16216</p>
+            <button
+              class="btn btn-sm text-[#5c5c5c] rounded-full px-4 py-1.5 bg-[#f2f2f2] border-0 text-lg font-normal"
+            >
+              Electricity
+            </button>
+          </div>
+
+          <div class="flex gap-2 mt-5">
+            <button
+              class="btn btn-soft h-[40px] w-[165px] flex items-center justify-center rounded-lg bg-white text-[#5c5c5c] font-normal copy-btn"
+            >
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+
+            <button
+              class="btn btn-soft h-[40px] w-[165px] bg-[#00a63e] text-white flex items-center justify-center gap-2 rounded-lg font-normal call-btn"
+            >
+              <!-- Hollow phone SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.2 1.53.63 3.02 1.26 4.41a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.39.63 2.88 1.06 4.41 1.26a2 2 0 0 1 1.72 2z"
+                />
+              </svg>
+              Call
+            </button>
+          </div>
+        </div>
+        <!-- !Brac Helpline -->
+        <div class="h-[387px] w-[420px] bg-white shadow-md rounded-xl p-5 pl-7 card">
+          <div class="flex justify-between items-center space-x-2">
+            <div
+              class="bg-[#FFE3E2] rounded-2xl h-[60px] w-[60px] flex items-center justify-center"
+            >
+              <img class="h-[35px] w-[35px]" src="assets/brac.png" />
+            </div>
+            <!-- Wrap heart in a div and move slightly left -->
+            <div class="translate-x-[-20px]">
+              <i
+                class="fa-regular fa-heart h-[65px] w-[50px] mt-10 text-gray-500 text-2xl self-center heart"
+              ></i>
+            </div>
+          </div>
+
+          <div class="mt-0 mb-4">
+            <p class="text-[#111111] font-bold text-2xl ">Brac Helpline</p>
+            <p class="text-[#5c5c5c] font-normal text-lg srvc-name">Brac</p>
+          </div>
+
+          <div class="">
+            <p class="text-[#111111] font-bold text-3xl pl-1 srvc-num">16445</p>
+            <button
+              class="btn btn-sm text-[#5c5c5c] rounded-full px-4 py-1.5 bg-[#f2f2f2] border-0 text-lg font-normal"
+            >
+              NGO
+            </button>
+          </div>
+
+          <div class="flex gap-2 mt-5">
+            <button
+              class="btn btn-soft h-[40px] w-[165px] flex items-center justify-center rounded-lg bg-white text-[#5c5c5c] font-normal copy-btn"
+            >
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+
+            <button
+              class="btn btn-soft h-[40px] w-[165px] bg-[#00a63e] text-white flex items-center justify-center gap-2 rounded-lg font-normal call-btn"
+            >
+              <!-- Hollow phone SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.2 1.53.63 3.02 1.26 4.41a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.39.63 2.88 1.06 4.41 1.26a2 2 0 0 1 1.72 2z"
+                />
+              </svg>
+              Call
+            </button>
+          </div>
+        </div>
+        <!-- !Railway Helpline -->
+        <div class="h-[387px] w-[420px] bg-white shadow-md rounded-xl p-5 pl-7 card">
+          <div class="flex justify-between items-center space-x-2">
+            <div
+              class="bg-[#FFE3E2] rounded-2xl h-[60px] w-[60px] flex items-center justify-center"
+            >
+              <img
+                class="h-[35px] w-[35px]"
+                src="assets/Bangladesh-Railway.png"
+              />
+            </div>
+            <!-- Wrap heart in a div and move slightly left -->
+            <div class="translate-x-[-20px]">
+              <i
+                class="fa-regular fa-heart h-[65px] w-[50px] mt-10 text-gray-500 text-2xl self-center heart"
+              ></i>
+            </div>
+          </div>
+
+          <div class="mt-0 mb-4">
+            <p class="text-[#111111] font-bold text-2xl">
+              Bangladesh Railway Helpline
+            </p>
+            <p class="text-[#5c5c5c] font-normal text-lg srvc-name">Bangladesh Railway</p>
+          </div>
+
+          <div class="">
+            <p class="text-[#111111] font-bold text-3xl pl-1 srvc-num">163</p>
+            <button
+              class="btn btn-sm text-[#5c5c5c] rounded-full px-4 py-1.5 bg-[#f2f2f2] border-0 text-lg font-normal"
+            >
+              Travel
+            </button>
+          </div>
+
+          <div class="flex gap-2 mt-5">
+            <button
+              class="btn btn-soft h-[40px] w-[165px] flex items-center justify-center rounded-lg bg-white text-[#5c5c5c] font-normal copy-btn"
+            >
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+
+            <button
+              class="btn btn-soft h-[40px] w-[165px] bg-[#00a63e] text-white flex items-center justify-center gap-2 rounded-lg font-normal call-btn"
+            >
+              <!-- Hollow phone SVG -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.2 1.53.63 3.02 1.26 4.41a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.39.63 2.88 1.06 4.41 1.26a2 2 0 0 1 1.72 2z"
+                />
+              </svg>
+              Call
+            </button>
+          </div>
+        </div>
+      </div>    
+
+
+
+
+      <!--* call history -->
+      <div class="bg-white p-5 mr-9 mt-12 shadow-md rounded-xl max-h-[1234px]"> 
+        <div class="flex items-center justify-between gap-x-34 p-3">
+          <p class="flex items-center gap-2 font-semibold text-xl ml-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+            Call History
+          </p>
+
+          <button
+            class="btn px-9 py-6 bg-[#00A63E] text-white rounded-full text-xl border-0 items-center text-sm font-medium"
+          >
+            Clear
+          </button>
+        </div>
+
+        <!-- Call history board -->
+        <div> 
+          
+
+
+        <div style="display:none" class="flex items-center justify-between h-[83px] w-[390px] bg-[#fafafa] rounded-lg p-3 ml-2 mt-2  ">  
+        <div>
+          <p class="text-[#111111] font-semibold text-lg">National Emergency Number</p>
+          <p class="text-[#5c5c5c] font-normal">999</p>
+        </div>
+        <div>time</div>
+      </div>
+
+          
+      <div style="display:none" class="flex items-center justify-between h-[83px] w-[390px] bg-[#fafafa] rounded-lg p-3 ml-2 mt-2 ">  
+        <div>
+          <p class="text-[#111111] font-semibold text-lg">Fire Service Number</p>
+          <p class="text-[#5c5c5c] font-normal">999</p>
+        </div>
+        <div>time</div>
+      </div>
+
+
+   
+
+
+      <div style="display:none" class="flex items-center justify-between h-[83px] w-[390px] bg-[#fafafa] rounded-lg p-3 ml-2 mt-2 ">  
+        <div>
+          <p class="text-[#111111] font-semibold text-lg">Police Helpline Number</p>
+          <p class="text-[#5c5c5c] font-normal">999</p>
+        </div>
+        <div>time</div>
+      </div>
+
+      <div style="display:none" class="flex items-center justify-between h-[83px] w-[390px] bg-[#fafafa] rounded-lg p-3 ml-2 mt-2 ">  
+        <div>
+          <p class="text-[#111111] font-semibold text-lg">Ambulance Service</p>
+          <p class="text-[#5c5c5c] font-normal">1994-999999</p>
+        </div>
+        <div>time</div>
+      </div>
+
+       <div style="display:none" class="flex items-center justify-between h-[83px] w-[390px] bg-[#fafafa] rounded-lg p-3 ml-2 mt-2 ">  
+        <div>
+          <p class="text-[#111111] font-semibold text-lg">Women & Child Helpline</p>
+          <p class="text-[#5c5c5c] font-normal">109</p>
+        </div>
+        <div>time</div>
+      </div>
+
+       <div style="display:none" class="flex items-center justify-between h-[83px] w-[390px] bg-[#fafafa] rounded-lg p-3 ml-2 mt-2 ">  
+        <div>
+          <p class="text-[#111111] font-semibold text-lg">Anti-Corruption Helpline/p>
+          <p class="text-[#5c5c5c] font-normal">106</p>
+        </div>
+        <div>time</div>
+      </div>
+
+      <div style="display:none" class="flex items-center justify-between h-[83px] w-[390px] bg-[#fafafa] rounded-lg p-3 ml-2 mt-2 ">  
+        <div>
+          <p class="text-[#111111] font-semibold text-lg">Electricity Helpline/p>
+          <p class="text-[#5c5c5c] font-normal">16216</p>
+        </div>
+        <div>time</div>
+      </div>
+
+      <div style="display:none" class="flex items-center justify-between h-[83px] w-[390px] bg-[#fafafa] rounded-lg p-3 ml-2 mt-2 ">  
+        <div>
+          <p class="text-[#111111] font-semibold text-lg">Brac Helpline/p>
+          <p class="text-[#5c5c5c] font-normal">16445</p>
+        </div>
+        <div>time</div>
+      </div>
+
+      <div style="display:none" class="flex items-center justify-between h-[83px] w-[390px] bg-[#fafafa] rounded-lg p-3 ml-2 mt-2 ">  
+        <div>
+          <p class="text-[#111111] font-semibold text-lg">Bangladesh Railway Helpline/p>
+          <p class="text-[#5c5c5c] font-normal">163</p>
+        </div>
+        <div>time</div>
+      </div>
+
+        </div>
+      </div>
+
+      <div></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
