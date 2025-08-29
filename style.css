@@ -17,11 +17,7 @@ html, body {
 
 
 @media (max-width: 768px) {
-
-
-  /* Safety: kill horizontal scroll caused by negative translates etc. */
   html, body { overflow-x: hidden; }
-
 
    nav {
     display: flex;
@@ -39,8 +35,7 @@ html, body {
     text-align: center;
     font-weight: bold;
     font-size: 1.25rem;
-    margin-bottom: 0.5rem; /* space between text and buttons */
-  }
+    margin-bottom: 0.5rem; 
 
   /* Buttons container below text */
   nav > div:last-child {
@@ -49,7 +44,7 @@ html, body {
     gap: 0.5rem;
     flex-wrap: wrap;
     width: 100%;
-    margin-bottom: 1rem; /* space between buttons and banner */
+    margin-bottom: 1rem; 
   }
 
   /* Individual buttons */
@@ -64,7 +59,7 @@ html, body {
 
 
 
-  /* 2) MAIN LAYOUT: two columns → one column */
+  /* 2) MAIN LAYOUT */
   .bg-\[\#F5FFF6\].flex.justify-between {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -72,7 +67,7 @@ html, body {
     min-height: auto !important;
   }
 
-  /* 3) CARDS GRID: single column, remove the left margin from container */
+  /* 3) CARDS GRID:  */
   .grid.grid-cols-3 {
     grid-template-columns: 1fr !important;
     gap: 0.75rem !important;
@@ -89,12 +84,12 @@ html, body {
     margin-inline: auto !important;
   }
 
-  /* Fix the heart’s negative translate so it doesn’t clip on small screens */
+
   .card .translate-x-\[\-20px\] {
     transform: none !important;
   }
 
-  /* Stack "Copy" and "Call" buttons vertically inside each card */
+  
   .card div.flex.gap-2.mt-5 {
     flex-direction: column !important;
     gap: 0.5rem !important;
@@ -104,14 +99,14 @@ html, body {
     justify-content: center !important;
   }
 
-  /* 5) CALL HISTORY PANEL: make it full-width and not capped by max-height */
+  /* 5) CALL HISTORY PANEL:  */
   .bg-white.p-5.mr-9.mt-12.shadow-md.rounded-xl.max-h-\[1234px\] {
     margin: 0.75rem !important;
     max-height: none !important;
     width: auto !important;
   }
 
-  /* Call history rows: remove fixed 390px width */
+  
   #call-history-container .form {
     width: 100% !important;
     margin-left: 0 !important;
@@ -128,4 +123,5 @@ html, body {
 
   /* 7) IMAGES: scale down safely */
   img { max-width: 100%; height: auto; display: block; }
+}
 }
